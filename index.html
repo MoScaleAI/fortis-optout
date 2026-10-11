@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Unsubscribe | The Fortis Agency</title>
+</head>
+<body style="font-family:system-ui,Arial,sans-serif;max-width:520px;margin:48px auto;padding:0 20px;color:#111">
+<h2>Unsubscribe from The Fortis Agency</h2>
+<p>Click the button below to confirm you no longer wish to receive emails from us.</p>
+<form id="f" method="POST" action="https://n8n.srv1020266.hstgr.cloud/webhook/fortis-optout-confirm">
+  <input type="hidden" name="e" id="e">
+  <input type="hidden" name="t" id="t">
+  <button type="submit" style="background:#0E1B2E;color:#fff;border:0;padding:12px 22px;font-size:16px;border-radius:6px;cursor:pointer">Confirm unsubscribe</button>
+</form>
+<p id="bad" style="display:none;color:#a00">This link is incomplete. To be removed, reply to the email with the word REMOVE.</p>
+<p style="color:#666;font-size:13px;margin-top:28px">The Fortis Agency, 101 Crawfords Corner Road, Suite 4125, Holmdel, NJ 07733.</p>
+<script>
+  var q = new URLSearchParams(location.search);
+  var e = (q.get("e") || "").replace(/ /g, "+"), t = q.get("t") || "";
+  document.getElementById("e").value = e;
+  document.getElementById("t").value = t;
+  if (!e || !t) { document.getElementById("f").style.display = "none"; document.getElementById("bad").style.display = "block"; }
+</script>
+</body>
+</html>
